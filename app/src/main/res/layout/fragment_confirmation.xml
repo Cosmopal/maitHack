@@ -1,10 +1,10 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    android:padding="64dp"
+    android:padding="48dp"
     tools:context="com.example.satyamverma.scrapstore.fragment.ConfirmationFragment">
 
 
@@ -13,12 +13,23 @@
         android:id="@+id/fragment_cnfmation_message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_blank_fragment" />
+        android:fontFamily="casual"
+        android:text="@string/hello_blank_fragment"
+        android:textColor="#000"
+        android:layout_marginBottom="24dp"
+        android:textSize="48sp"
+        android:textAlignment="center"/>
 
     <Button
         android:id="@+id/fragment_cnfamtion_yes_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:textSize="20sp"
+        android:paddingHorizontal="32dp"
+        android:paddingVertical="16dp"
+        android:background="@color/colorPrimaryDark"
         android:text="Yes"/>
 
 
@@ -26,6 +37,12 @@
         android:id="@+id/fragment_cnfamtion_no_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:background="@color/colorPrimaryDark"
+        android:textSize="20sp"
+        android:paddingHorizontal="32dp"
+        android:paddingVertical="16dp"
         android:text="No"/>
 
-</LinearLayout>
+</RelativeLayout>
