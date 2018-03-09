@@ -1,0 +1,52 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context="com.example.satyamverma.scrapstore.fragment.PickupSelectFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <!--<TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/hello_blank_fragment" />-->
+
+    <TextView
+        android:id="@+id/fragment_pickup_dateTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3 Mar 2017"/>
+
+    <Button
+        android:id="@+id/fragment_select_date_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="36dp"
+        android:text="Select Date"/>
+
+    <TextView
+        android:id="@+id/fragment_pickup_timeTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="4:30 pm"/>
+
+    <Button
+        android:id="@+id/fragment_select_time_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Time"/>
+
+    <DatePicker
+        android:id="@+id/fragment_date_picker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"/>
+
+    <TimePicker
+        android:id="@+id/fragment_time_picker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"/>
+
+</LinearLayout>

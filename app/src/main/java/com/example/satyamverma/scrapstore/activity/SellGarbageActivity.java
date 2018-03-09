@@ -1,5 +1,6 @@
 package com.example.satyamverma.scrapstore.activity;
 
+import android.net.Uri;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -19,8 +20,18 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.satyamverma.scrapstore.R;
+import com.example.satyamverma.scrapstore.data.DummyContent;
+import com.example.satyamverma.scrapstore.fragment.ConfirmationFragment;
+import com.example.satyamverma.scrapstore.fragment.QuantitiesFragment;
+import com.example.satyamverma.scrapstore.fragment.SelectGarbageTypeFragment;
 
-public class SellGarbageActivity extends AppCompatActivity {
+import org.jetbrains.annotations.NotNull;
+
+import java.util.ArrayList;
+
+public class SellGarbageActivity extends AppCompatActivity
+        implements SelectGarbageTypeFragment.OnListFragmentInteractionListener,
+        ConfirmationFragment.OnFragmentInteractionListener{
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -86,6 +97,16 @@ public class SellGarbageActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    public void onListFragmentInteraction(@NotNull DummyContent.GarbageType item) {
+
+    }
+
+    @Override
+    public void onFragmentInteraction(@NotNull Uri uri) {
+
+    }
+
     /**
      * A placeholder fragment containing a simple view.
      */
@@ -127,21 +148,30 @@ public class SellGarbageActivity extends AppCompatActivity {
      */
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
+        ArrayList<Fragment> fragments = new ArrayList<Fragment>();
+
         public SectionsPagerAdapter(FragmentManager fm) {
             super(fm);
+            fragments.add(SelectGarbageTypeFragment.Companion.newInstance(2));
+//            fragments.add(ConfirmationFragment.Companion.newInstance("Are you sure you wanna sell? You can make more money by opening your store.", null));
+            fragments.add(QuantitiesFragment.Companion.newInstance(1));
+            fragments.add(ConfirmationFragment.Companion.newInstance("Are you sure you wanna sell? You can make more money by opening your store.", null));
+
         }
 
         @Override
         public Fragment getItem(int position) {
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
-            return PlaceholderFragment.newInstance(position + 1);
+//            return PlaceholderFragment.newInstance(position + 1);
+            return fragments.get(position);
         }
 
         @Override
         public int getCount() {
             // Show 3 total pages.
-            return 3;
+//            return 3;
+            return fragments.size();
         }
     }
 }
